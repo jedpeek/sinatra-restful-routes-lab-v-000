@@ -20,11 +20,14 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/recipes/:id' do #edit action
-    @recipe = Article.find_by_id(params[:id])
+    @recipe = Recipe.find_by_id(params[:id])
     @recipe.title = params[:name]
     @recipe.ingredients = params[:ingredients]
     @recipe.cook_time = params[:cook_time]
     @recipe.save
     redirect to "/recipes/#{@recipe.id}"
   end
+
+  get 'recipes/new' do
+    @recipe = 
 end
