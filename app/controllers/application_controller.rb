@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes/new' do
-    erb :'new'
+    erb :new
   end
 
   post 'recipes' do
