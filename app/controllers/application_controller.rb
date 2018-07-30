@@ -14,12 +14,12 @@ class ApplicationController < Sinatra::Base
     erb :'show'
   end
 
-  get '/articles/:id/edit' do  #load edit form
+  get '/recipes/:id/edit' do  #load edit form
     @article = Article.find_by_id(params[:id])
     erb :edit
   end
 
-  patch '/articles/:id' do #edit action
+  patch '/recipes/:id' do #edit action
     @recipe = Article.find_by_id(params[:id])
     @recipe.title = params[:name]
     @recipe.ingredients = params[:ingredients]
